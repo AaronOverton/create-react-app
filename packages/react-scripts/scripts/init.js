@@ -23,6 +23,10 @@ const { defaultBrowsers } = require('react-dev-utils/browsersHelper');
 const os = require('os');
 const verifyTypeScriptSetup = require('./utils/verifyTypeScriptSetup');
 
+function helloHeatherstone() {
+  console.log('Heatherstone custom CRA');
+}
+
 function isInGitRepository() {
   try {
     execSync('git rev-parse --is-inside-work-tree', { stdio: 'ignore' });
@@ -90,6 +94,8 @@ module.exports = function(
 ) {
   const appPackage = require(path.join(appPath, 'package.json'));
   const useYarn = fs.existsSync(path.join(appPath, 'yarn.lock'));
+
+  helloHeatherstone();
 
   if (!templateName) {
     console.log('');
